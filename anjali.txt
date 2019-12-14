@@ -1,0 +1,931 @@
+package Programs;
+import java.util.*;
+public class Arrays2d {
+
+	public static void main(String[] args) {
+		
+		
+Scanner s=new Scanner(System.in);
+System.out.println("enter number of rows and col");
+int rows=s.nextInt();
+int cols=s.nextInt();
+int arr[][]=new int[rows][cols];
+System.out.println("enter " + (rows*cols)+ " array elements");
+for(int i=0;i<rows;i++)
+
+    {
+        for(int j=0; j<cols; j++)
+        {
+           arr[i][j]=s.nextInt();
+           
+        }
+    }
+	   
+   System.out.print("The Array is :\n");
+    for(int i=0; i<rows; i++)
+    {
+        for(int j=0; j<cols; j++)
+        {
+            System.out.print(arr[i][j]+ "  ");
+        }
+        System.out.println();
+}
+	
+	}}
+
+
+
+
+
+
+package Programs;
+
+public class coupon {
+	public static void main(String[] args) {
+int n=Integer.parseInt(args[0]);
+int count=collect(n);
+System.out.println(count);
+		
+	}
+	public static int getCoupon(int n)
+	{
+		return(int) (Math.random()*n);
+		
+	}
+	public static int collect(int n)
+	{
+		boolean[] isCollected=new boolean[n];
+		int count=0;
+		int distinct=0;
+		while (distinct<n) {
+			 int value=getCoupon(n);
+		count++;
+		if(!isCollected[value])
+		{
+			distinct++;
+			isCollected[value]=true;
+		}}
+		return count;
+	
+	
+
+}
+}
+
+
+
+
+package Programs;
+
+public class distance {
+
+	public static void main(String[] args) {
+int x=Integer.parseInt(args[0]);
+int y=Integer.parseInt(args[1]);
+double distance=Math.sqrt(x*x + y*y);
+	System.out.println("distance from("+x+","+y+") to (0,0)="+distance);
+}
+}
+
+
+
+
+package Programs;
+
+import java.util.Scanner;
+
+public class Factors {
+
+	public static void main(String[] args) {
+		Scanner scn=new Scanner(System.in);
+		System.out.println("enter the number:");
+		int n=scn.nextInt();
+		long fact=1;
+		for(int i=1;i<=n;i++)
+		{
+			fact=fact*i;
+		}
+			System.out.println("factor of number is:"+fact);
+
+	}
+
+}
+
+
+
+
+package Programs;
+
+import java.util.*;
+
+public class Flip {
+
+	public static void main(String[] args) {
+		int heads = 0;
+        int tails = 0;
+        int counter = 1;
+        double randNum = 0.0;
+        Scanner in = new Scanner(System.in);
+         
+        System.out.println("How many times will the coin be flipped? ");
+        int flips = in.nextInt();
+         
+        while(counter <= flips)
+        {
+            randNum = Math.random();
+            System.out.print(counter + "\t" + randNum);
+             
+            if(randNum < .5)
+            {
+                heads++;
+                System.out.println("\t heads");
+            }
+            else
+            {
+                tails++;
+                System.out.println("\t tails");
+               }
+            counter++;      
+        }
+       
+        System.out.println("Number of Heads = " + heads);
+        System.out.println("Number of Tails = " + tails);
+         
+	}
+	}
+
+
+
+package Programs;
+
+import java.util.Scanner;
+
+public class Gambler {
+
+	public static void main(String[] args) {
+int stake=Integer.parseInt(args[0]);
+int goal=Integer.parseInt(args[1]);
+int num=Integer.parseInt(args[2]);
+		/*Scanner scn=new Scanner(System.in);
+				System.out.println("enter stake,goal,num");
+				int stake=scn.nextInt();
+				int goal=scn.nextInt();
+				int num=scn.nextInt();
+				*/
+int wins=0;
+int bets=0;
+for(int i=0;i<num;i++)
+{	
+while(stake>0 && stake<goal)
+{
+bets++;
+if(Math.random()<0.5)
+{
+stake++;	
+}
+else
+{
+	
+stake--;
+}
+if(stake==goal)
+{
+	wins++;
+}
+}}
+System.out.println("number of wins="+num);
+System.out.println("percentage of wins="+ 100.0*wins/num);
+System.out.println("av of bets="+1.0*bets/num);
+
+
+	}
+
+}
+
+
+
+
+
+
+
+package Programs;
+
+public class Harmonic {
+
+	public static void main(String[] args) {
+int n=8;
+System.out.println(nthHarmonic(n));
+	}
+static double nthHarmonic(int n)
+{
+float harmonicc=1;
+for (int i=2;i<=n;i++)
+{
+	
+harmonicc=harmonicc + (float)1/i;
+}
+return harmonicc;
+}
+}
+
+
+
+
+package Programs;
+import java.util.*;
+public class permutationIterative {
+
+	public static void permutation(String s)
+	{
+		List l=new ArrayList();
+		l.add(String.valueOf(s.charAt(0)));
+		for(int i=1;i<s.length();i++)
+		{
+			for(int j=l.size()-1;j>=0;j--)
+			{
+				String str=(String) l.remove(j);
+				for(int k=0;k<=str.length();k++)
+				{
+					l.add(str.substring(0,k)+s.charAt(i)+str.substring(k));
+					
+				}
+			}
+			
+		}
+		System.out.println(l);
+	}
+	public static void main(String[] args) {
+		String s="ABC";
+		permutation(s);
+
+	}
+
+}
+
+
+
+
+package Programs;
+
+public class permutationRec {
+
+	public static void main(String[] args) {
+		String s="ABC";
+		permutationRec("",s);
+	}
+public static void permutationRec(String c,String s)
+{
+if(s.length()==0)
+{
+	System.out.println(c);
+}
+for(int i=0;i<s.length();i++)
+{
+	String newc=c+s.charAt(i);
+	String news=s.substring(0,i)+s.substring(i+1);
+	permutationRec(newc , news);
+}
+}
+}
+
+
+
+
+package Programs;
+import java.util.*;
+public class Power {
+public static void main(String []args)
+{
+	int i=0;
+	int power=1;
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the number");
+	int n=sc.nextInt();
+	System.out.println("power of 2^"+n);
+	while(i<=n)
+	{
+		System.out.println("2^"+i+"="+power);
+		power=power*2;
+		i++;
+	}
+	
+
+}                                                  
+}
+
+
+
+
+
+package Programs;
+
+import java.util.*;
+
+public class Quadratic {
+
+	public static void main(String[] args) {
+Scanner s=new Scanner(System.in);
+System.out.println("Enter the value of a");
+double a=s.nextDouble();
+System.out.println("Enter the value of b");
+double b=s.nextDouble();
+System.out.println("Enter the value of c");
+double c=s.nextDouble();
+double root1,root2;
+double delta=b*b-4*a*c;
+if(delta>0)
+{
+ root1=(-b + Math.sqrt(delta))/(2*a);
+ root2=(-b - Math.sqrt(delta))/(2*a);
+}
+else if(delta==0)
+{
+root1=root2=-b/(2*a);
+System.out.println("root1"+root1);
+}
+else
+{
+double realPart=-b/(2*a);
+double imaginaryPart=Math.sqrt(-delta)/(2*a);
+System.out.println("root1="+realPart+","+imaginaryPart);
+System.out.println("root2="+realPart+","+imaginaryPart);
+}
+	}
+
+	
+
+	
+
+}
+
+
+
+
+
+
+package Programs;
+
+import java.util.Scanner;
+
+public class replace {
+
+	public static void main(String[] args) {
+		String s1,s2,s3;
+		Scanner scn= new Scanner(System.in);
+		System.out.println("hello username...How are you?");
+		System.out.println("enter the name:");
+		s1=scn.next();
+		System.out.println("enter thr string you want to replace:");
+		s2=scn.next();
+		s3=s1.replace(s2, s1);
+		System.out.println("hello " +s3+" ..how r u");
+		
+
+	}
+
+}
+
+
+
+
+package Programs;
+
+public class threeInteger {
+	public static void main(String[] args) {
+int a[]= {0,-1,2,-3,4,-3,6,-1};
+int sum=0;
+int i=0,j=0,k=0;
+int count=0;
+for(i=0;i<=a.length;i++)
+{
+for(j=i+1;j<=a.length-1;j++)
+{
+for(k=j+1;k<=a.length-2;k++)
+{
+sum=a[i]+a[j]+a[k];
+if(sum==0) {
+	count++;
+	System.out.println(a[i]+ " "+ a[j] +" "+  a[k] );
+}
+}
+}
+
+	}
+System.out.println(count);
+
+	}}
+
+
+
+
+
+package Programs;
+
+public class wind {
+
+	public static void main(String[] args) {
+double v=Double.parseDouble(args[0]);
+double t=Double.parseDouble(args[1]);
+double w=35.74+0.6215*t+(0.4275*t-35.75)*Math.pow(v,0.16);
+System.out.println("temperature: "+t);
+System.out.println("wind speed : "+v);
+System.out.println("wind chill : "+w);
+	}
+
+}
+
+
+
+
+
+package DsProgram;
+
+public class pallindrome {
+
+	public static void main(String[] args) {
+System.out.println(isPallindrome("mam"));
+	}
+	static boolean isPallindrome(String s)
+	{
+		s=s.toLowerCase();
+		int l=s.length();
+		for(int i=0;i<1/2;i++)
+		{
+			if(s.charAt(i)!=s.charAt(l-1-i));
+			{
+				return false;
+			}
+		
+		}
+		return true;
+	}
+
+}
+
+
+
+
+package Algos;
+
+public class Temperature {
+
+	public static void main(String[] args) {
+		int celsius=Integer.parseInt(args[0]);
+		int fahrenhite=Integer.parseInt(args[1]);
+		int t1=(celsius*9/5)+32;
+		int t2=(fahrenhite-32)*5/9;
+		System.out.println(t1);
+		System.out.println(t2);
+	}
+
+}
+
+
+
+
+
+package Algos;
+
+import java.util.Scanner;
+
+public class Prime {
+
+	public static void main(String[] args) {
+int count,num;
+for(num=0;num<=100;num++)
+{
+	count=0;
+for(int i=2;i<=num/2;i++)
+{
+if(num%i==0)
+{
+count++;
+break;
+}
+
+}
+if(count==0 && num!=1)
+{
+System.out.println(num+" ");
+}
+}
+			}}
+
+
+
+package Algos;
+
+import java.util.Scanner;
+
+public class nibble {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("enetr decimal value");
+		int x=s.nextInt();
+		int binary[]=new int[100];
+		int i=0;
+		while(x>0)
+		{
+			binary[i++]=x%2;
+			x=x/2;
+		}
+		System.out.println("decinal representation is :");
+		for(int j=i-1;j>=0;j--)
+		{
+			
+			System.out.print(binary[j]);
+			
+		}
+		
+		System.out.println(swapNibble(x));
+	}
+	
+	static int swapNibble(int x)
+	{
+		return( (x & 0x0F)<<4 | (x & 0xF0)>>4 );
+	}
+	}
+
+
+
+
+
+package Algos;
+
+public class monthlyPayment {
+
+	public static void main(String[] args) {
+ double p=Integer.parseInt(args[0]);
+ double R=Integer.parseInt(args[1]);
+ double y=Integer.parseInt(args[2]);
+ double n=12*y;
+ double r=R/(12*100);
+ double payment=(p*r)/1-Math.pow((1+r),(-n));
+ System.out.println(payment);
+	}
+
+}
+
+
+
+
+package Algos;
+import java.util.*;
+public class insertionSort {
+
+	public static void main(String[] args) {
+String []arr= {"Cc","aa","Ee","hh","ff"};
+String sortedArray[] = sort(arr, arr.length); 
+for(int i=0;i<sortedArray.length;i++){
+System.out.println(sortedArray[i]);
+	}}
+public static String[] sort(String[]a, int key)
+{
+	for(int i=0;i<key;i++)
+	{
+	for(int j=i+1;j<key;j++)
+	{
+		if(a[i].compareToIgnoreCase	(a[j])>0)
+		{
+			String temp=a[i];
+			a[i]=a[j];
+			a[j]=temp;
+			
+		}
+	}
+	}
+return a;
+}
+}
+
+
+
+
+
+package Algos;
+import java.util.*;
+public class decimalToBinary {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("enetr decimal value");
+		int n=s.nextInt();
+		int binary[]=new int[100];
+		int i=0;
+		while(n>0)
+		{
+			binary[i++]=n%2;
+			n=n/2;
+		}
+		System.out.println("decinal representation is :");
+		for(int j=i-1;j>=0;j--)
+		{
+			System.out.print(binary[j]);
+		}
+	}
+
+}
+
+
+
+
+
+
+
+package Algos;
+import java.util.*;
+public class dayOfWeek {
+
+	public static void main(String[] args) {
+int m=Integer.parseInt(args[0]);
+int d=Integer.parseInt(args[1]);
+int y=Integer.parseInt(args[2]);
+int y0 = y - (14 - m) / 12;
+int x = y0 + y0/4 - y0/100 + y0/400;
+int m0 = m + 12 * ((14 - m) / 12) - 2;
+int d0 = (d + x + (31*m0)/12) % 7;
+System.out.println(d0);
+	}
+
+}
+
+
+
+
+package Algos;
+
+public class bubbleSortString {
+
+		public static void main(String[] args) {
+	String str[]= {"rosy","shero","jimmy","anjali"};
+	for(int i=0; i<str.length;i++)
+	{
+		for(int j=i+1;j<str.length;j++)
+		{
+			if(str[j].compareTo(str[i])<0)
+			{
+				String temp=str[i];
+				str[i]=str[j];
+				str[j]=temp;
+				
+			}
+			
+		}
+		System.out.println(str[i]);
+	}
+	
+	}
+	}
+
+
+
+
+
+package Algos;
+
+import java.util.Arrays;
+
+public class bubbleSortInteger {
+
+	public static void main(String[] args) {
+int a[]= {2,7,5,9,4,1};
+sort(a);
+for(int arr:a)
+{
+	System.out.println(arr);
+}
+	}
+public static void sort(int []a)
+{
+for(int i=0; i<a.length-1;i++)
+{
+	for(int j=0;j<a.length-1-i;j++)
+	{
+		if(a[j]>a[j+1])
+		{
+			int temp=a[j];
+			a[j]=a[j+1];
+			a[j+1]=temp;
+			
+		}
+		
+	}
+}
+}
+}
+
+
+
+
+
+package Algos;
+import java.util.*;
+public class binarySearchString {
+
+		static String[] a = { "AAA", "BBB", "CCC", "DDD", "EEE", "FFF", "GGG" };
+		public static void main(String[] args) {
+			System.out.println("Key Found at : " + binarySearch(a,"AAA") + " position");
+		}
+		public static int binarySearch(String arr[],String key)
+		{
+			int start=0;
+			int end=arr.length-1;
+			while(start<=end)
+			{
+				int mid=(start+end)/2;
+				if(key==arr[mid])
+				{
+					return mid;
+					}
+				else if(key.compareTo(arr[mid])<0)
+				{
+					end=mid-1;
+				}
+				else
+				{
+					start=mid+1;
+				}
+			}
+			return -1;
+		}
+	}
+
+
+
+
+
+package Algos;
+
+public class binarySearchInteger {
+
+	public static void main(String[] args) {
+		binarySearchInteger bs=new binarySearchInteger();
+		int arr[]= {1,2,4,5,7,8,9,10};
+		System.out.println("key 5 is at position:"+bs.binarySearch(arr, 5));
+	}
+	public int binarySearch(int arr[],int key)
+	{
+		int start=0;
+		int end=arr.length-1;
+		while(start<=end)
+		{
+			int mid=(start+end)/2;
+			if(key==arr[mid])
+			{
+				return mid;
+				}
+			else if(key<arr[mid])
+			{
+				end=mid-1;
+			}
+			else
+			{
+				start=mid+1;
+			}
+		}
+		return -1;
+	}
+}
+
+
+
+
+
+
+
+package Algos;
+
+import java.util.Arrays;
+
+public class anagram {
+
+	public static void main(String[] args) {
+char str1[]= {'h','e','a','r','t'};
+char str2[]= {'e','a','r','t','h'};
+if(areAnagram(str1,str2))
+{
+System.out.println("Anagram");
+}
+else
+{System.out.println("Not an Anagram");}
+	}
+static boolean areAnagram(char[]str1,char[]str2)
+{
+	int s1=str1.length;
+	int s2=str2.length;
+	if(s1!=s2)
+	return false;
+	Arrays.sort(str1);
+	Arrays.sort(str2);
+	for(int i=0;i<s1;i++)
+	{
+		if(str1[i]!=str2[i])
+		{
+			return false;
+		}
+		return true;
+	}
+	return false;
+}
+}
+
+
+
+
+package DsProgram;
+import java.util.*;
+public class cashCounter {
+	public static void main(String[] args) {
+
+        int balance = 5000, withdraw, deposit;
+        Scanner s = new Scanner(System.in);
+        while(true)
+        {
+            System.out.println("Choose 1 for Withdraw");
+            System.out.println("Choose 2 for Deposit");
+            System.out.println("Choose 3 for Check Balance");
+            System.out.println("Choose 4 for EXIT");
+            System.out.print("Choose the operation you want to perform:");
+            int n = s.nextInt();
+            switch(n)
+            {
+                case 1:
+                System.out.print("Enter money to be withdrawn:");
+                withdraw = s.nextInt();
+                if(balance >= withdraw)
+                {
+                    balance = balance - withdraw;
+                    System.out.println("Please collect your money");
+                }
+                else
+                {
+                    System.out.println("Insufficient Balance");
+                }
+                System.out.println("");
+                break;
+ 
+                case 2:
+                System.out.print("Enter money to be deposited:");
+                deposit = s.nextInt();
+                balance = balance + deposit;
+                System.out.println("Your Money has been successfully depsited");
+                System.out.println("");
+                break;
+ 
+                case 3:
+                System.out.println("Balance : "+balance);
+                System.out.println("");
+                break;
+ 
+            
+                case 4:
+                System.exit(0);
+            }
+        }
+	
+
+
+}}
+
+
+
+
+package DsProgram;
+
+import java.util.Stack;
+
+public class stack {
+
+	public static void main(String[] args) {
+		String s = "(5+6)∗(7+8)/(4+3)(5+6)∗(7+8)/(4+3)";
+		String result = (stringsCheck(s)) ? "Balanced" : "Not Balanced";
+		System.out.println(result);
+	}
+static boolean stringsCheck(String s)
+{
+	Stack <Character>st=new Stack<>();
+	 for(int i=0;i<s.length();i++)
+	 {
+		 char c=s.charAt(i);
+		 if(c=='(')
+		 {
+			 st.push(c);
+		 }
+		 else if(c==')') {
+			 st.pop();
+		 }
+		 
+	 }	
+	 return st.isEmpty();
+}
+}
+
+
+
+
+
+
+
+
+
