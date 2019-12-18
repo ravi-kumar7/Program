@@ -248,7 +248,12 @@ exports.leapYear = (year) => {
     /**
      *Replace String 
      */
-    exports.strngs = (b, c) => {
+    exports.strngs = (b,c) => {
+        /**
+         * Taking value for b and c
+         * replacing values
+         */
         let d = b.replace(c, b);
-        console.log("hello " + d + "..how r u?");
+        let output=("hello " + d + "..how r u?");
+        return output;
     }

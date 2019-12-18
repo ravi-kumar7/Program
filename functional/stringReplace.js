@@ -20,4 +20,4 @@ let b=readline.question("enter the name:");
 let c=readline.question('enter the string you want to replace:')
 let util=require("../utility/functionalUtility");
 let output=util.strngs(b,c);
-console.log(output);
+console.log("after replacement:",output);
