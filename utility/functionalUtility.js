@@ -32,6 +32,7 @@ exports.leapYear = (year) => {
         let x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
         let m0 = m + 12 * ((14 - m) / 12) - 2;
         let d0 = (d + x + (31 * m0) / 12) % 7;
+        return d0;
     },
 
     /**
@@ -77,7 +78,7 @@ exports.leapYear = (year) => {
             root1 = (-b + Math.sqrt(delta)) / (2 * a);
             root2 = (-b - Math.sqrt(delta)) / (2 * a);
             let result = [root1, root2];
-            return result;
+            return  result;
         }
         catch (e) {
             console.log(e);
@@ -225,7 +226,7 @@ exports.leapYear = (year) => {
 
             // If no triplet with 0 sum found in array 
             if (found == false)
-                System.out.println(" not exist ");
+                console.log(" not exist ");
 
         }
 
@@ -257,3 +258,4 @@ exports.leapYear = (year) => {
         let output=("hello " + d + "..how r u?");
         return output;
     }
+    

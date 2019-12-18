@@ -19,5 +19,5 @@ let a=readline.question("enter the value of a:");
 let b=readline.question("enter the value of b:");
 let c=readline.question("enter the value of c:");
 let util=require("../utility/functionalUtility");
-let value=util.quadratic(a,b,c);
-console.log("values are",value);
+let res=util.quadratic(a,b,c);
+console.log("values are:",res);

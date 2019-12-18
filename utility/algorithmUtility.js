@@ -41,27 +41,47 @@ exports.sort = (arr) => {
                 return false;
             }
         }
-    }
+    },
+    /**
+     *  insertion sort to sort strings
+     */
+    exports.inSort = (arr) =>
 /**
- *  insertion sort to sort strings
- */
-exports.inSort =(arr)=>
-{
-    for(let i=1;i<arr.length;i++)
-    {
-        let key=arr[i];
-        let j=i-1;
-        while (j>-1 && (arr[j])> key)
-        {
-            arr[j+1]=arr[j];
-            j--;
-            
+ * Reads in strings
+ * prints them in sorted order using insertion sort.
+
+ */ {
+        for (let i = 1; i < arr.length; i++) {
+            let key = arr[i];
+            let j = i - 1;
+            while (j > -1 && (arr[j]) > key) {
+                arr[j + 1] = arr[j];
+                j--;
+
+            }
+            arr[j + 1] = key;
         }
-        arr[j+1]=key;
-    }
-    return arr;
-    
-
-    
+        return arr;
     }
 
+exports.binary = (stringArr, searchword) => {
+
+    let low = 0;
+    let high = stringArr.length - 1;
+    mid = Math.floor((low + high) / 2);    while (low <= high) {
+       
+        if (searchword == stringArr[mid]) {
+            return mid;
+        }
+        else if (searchword > stringArr[mid]) {
+            low = mid + 1;
+        }
+        else (searchword < stringArr[mid])
+        {
+            high = mid - 1;
+        }
+        mid = Math.floor((high + low) / 2);
+    }
+    return (stringArr[mid] != searchword) ? -1 : mid + 1;
+
+}
