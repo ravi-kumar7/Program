@@ -16,21 +16,6 @@
 ******************************************************************************/
 let readline=require("readline-sync");
 let year=readline.question("enter year:");
-function leapYear()
-{
-    if(year.length!=4)    
-    {
-        console.log("enter 4 digit no.");
-    }
-    else
-    {
-    if((year % 400==0 ) || (year % 4==0 && year % 100!=0 )) 
-    {
-            console.log(year + " leap year");
-        }
-    else
-        {
-            console.log(year + " not a leap year");
-        }
-    }}
-    leapYear(year);
+let util=require("../utility/functionalUtility");
+let result=util.leapYear(year);
+console.log("year is:",result);

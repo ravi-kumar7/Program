@@ -16,15 +16,6 @@
 ******************************************************************************/
 let readline=require("readline-sync");
 let N=readline.question("enter the number:");
-console.log("The prime factorization of " + N + " is: ");
-for (let factor = 2; factor*factor <= N; factor++) {
-    while (N % factor == 0) 
-    {
-        console.log(factor + " "); 
-        N = N / factor;
-    }
-}
-if (N > 1) 
-console.log(N);
-else
-console.log();
+let util=require("../utility/functionalUtility");
+let result=util.factorial(N);
+console.log("The prime factorization of " + N + " is: ",result);

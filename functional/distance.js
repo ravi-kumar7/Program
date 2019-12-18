@@ -17,5 +17,6 @@
 let readline=require("readline-sync");
 let x=readline.question("enter the value of x:"); 
 let y=readline.question("enter the value of y:");
-let distance=Math.sqrt(x*x + y*y);
-console.log("distance from("+x+","+y+") to (0,0)="+distance);
+let util=require("../utility/functionalUtility");
+let result=util.dist(x,y);
+console.log("distance from("+x+","+y+") to (0,0)=",result);

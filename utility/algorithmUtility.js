@@ -1,36 +1,32 @@
 /**
  * Sort an array using Bubble Sort.
  */
-module.exports = {
+
+    
+exports.sort=(arr)=>
+    {
     /**
      * Taking value in Array.
      * Sort the Array.
      */
-    sort=(arr)=>
-    {
-    /**
-     * sorting the array. 
-     */
-    
         for(let i=0;i<arr.length-1;i++)
         {
             for(let j=0;j<arr.length-1-i;j++)
             {
-                if(a[j]>a[j+1])
+                if(arr[j]>arr[j+1])
                 {
-                    let temp=a[j];
-                    a[j]=a[j+1];
-                    a[j+1]=temp;
+                    let temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
                 }
             }
         }
         return arr;
-    }
 },
 /**
  * string is an anagram of another 
  */
-isAnagram = (letterOne, letterTwo) => {
+exports.isAnagram = (letterOne, letterTwo) => {
     /**
      * Taking two strings in array.
      * Comparing string one with string two

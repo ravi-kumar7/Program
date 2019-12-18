@@ -16,7 +16,7 @@
  ******************************************************************************/
 let readline=require("readline-sync");
 let util=require('../utility/functionalUtility');
-let t=readline.question("enter the value of t");
-let v=readline.question("enter the value of v");
+let t=readline.question("enter the value of t:");
+let v=readline.question("enter the value of v:");
 let result=util.windChill(t,v);
-console.log(result)
+console.log("Wind Chill is:",result);
