@@ -15,6 +15,7 @@ exports.leapYear = (year) => {
     else {
         console.log(year, "is not a leap year");
     }
+    
 
 },
 
@@ -106,6 +107,7 @@ exports.leapYear = (year) => {
         catch (e) {
             console.log(e);
         }
+        
     },
     /**
      *  program to print the Euclidean distance from the point (x, y) to the origin (0, 0).
@@ -143,6 +145,7 @@ exports.leapYear = (year) => {
                 console.log("2^ " + i + "=" + power);
                 power = power * 2;
                 i++;
+                
             }
         }
         catch (e) {
@@ -194,57 +197,58 @@ exports.leapYear = (year) => {
         catch (e) {
             console.log(e);
         }
+        
 
 
     },
     /**
      * Sum of three Integer adds to zero
      */
-    exports.sumOfThreeNum = (n, arr) => {
+    exports.sumOfThreeNum = (arr,n) => {
         /**
          *  taking i,j,k values as input.
          *  Find distinct triples
          * return result
          */
-        let sum = 0;
-        let count = 0;
-        let arr2 = [];
-        for (let i = 0; i < n - 2; i++) {
-            for (let j = i + 1; j < n - 1; j++) {
-                for (let k = j + 1; k < n; k++) {
-                    sum += arr[i] + arr[j] + arr[k];
-                    if (sum == 0) {
-                        arr2[count] = [];
-                        arr2[count].push(arr[i]);
-                        arr2[count].push(arr[j]);
-                        arr2[count].push(arr[k]);
-                        count++;
+        {
+            let found = true;
+            for (let i = 0; i < n - 2; i++) {
+                for (let j = i + 1; j < n - 1; j++) {
+                    for (let k = j + 1; k < n; k++) {
+                        if (arr[i] + arr[j] + arr[k] == 0) {
+                            console.log(arr[i]+ " "+ arr[j]+ " "+ arr[k]);
+                            found = true;
+                        }
                     }
-                    sum = 0;
                 }
             }
+
+            // If no triplet with 0 sum found in array 
+            if (found == false)
+                System.out.println(" not exist ");
+
         }
-        console.log("Number of Triplets " + count);
-        return arr2;
+
 
     },
     /**
      * Program to  calculate monthly Payment
      */
-    exports.payments = (principal, year, Rate) => {
+    exports.payments = (principal, year,Rate) => {
         /**
          * taking value  of Principal,Rate,Year
          * calculate the payment
          */
-        let r = R / (12 * 100);
+        let r = Rate / (12 * 100);
         let n = 12 * year;
         let payment = (principal * r) / (1 - Math.pow(1 + r, -n))
+        return payment;
+        
     },
     /**
      *Replace String 
      */
-    exports.strngs=(b,c)=>
-     {
-        let d=b.replace(c,b);
-        console.log("hello " + d +"..how r u?");
-     }
+    exports.strngs = (b, c) => {
+        let d = b.replace(c, b);
+        console.log("hello " + d + "..how r u?");
+    }

@@ -17,28 +17,13 @@
 let readline = require("readline-sync");
 let letterOne = readline.question("enter first Letter:");
 let letterTwo = readline.question("enter second Letter:");
-let result=isAnagram(letterOne,letterTwo);
-if(result)
+let util=require("../utility/algorithmUtility");
+let output=util.isAnagram(letterOne,letterTwo);
+if(output)
 {
     console.log("it is an anagram");
 }
 else
 {
     console.log("Letters are not an anagrm");   
-}
-
-function isAnagram(){
-if (letterOne.length != letterTwo.length) {
-    return false;
-}
-else {
-    let letterOneArray = letterOne.toLowerCase().split(''); 
-    let letterTwoArray = letterTwo.toLowerCase().split(''); 
-        if (letterOneArray.sort().join('').localeCompare(letterTwoArray.sort().join('')) == 0) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
 }

@@ -15,7 +15,7 @@
 *
 ******************************************************************************/
 let arr=[3,5,6,1,2,44,89,32,21];
-console.log("Before sorting the array is :"+"[",arr,"]");
+console.log("Before sorting the array is:",arr);
 let util=require("../utility/algorithmUtility");
 let sortedArray=util.sort(arr);
-console.log("After sorting the array is :"+"[",sortedArray,"]");
+console.log("After sorting the array is:",sortedArray);

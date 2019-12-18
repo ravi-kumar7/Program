@@ -15,8 +15,13 @@
 *
 ******************************************************************************/
 let readline=require("readline-sync");
-let n=readline.question('Enter Number Integer');
-try{
+let num=readline.question("enter the number:");
+let arr = [12, 3, 4, 1, 6, 9]; 
+    let n =arr.length; 
+    let util=require("../utility/functionalUtility");
+let output=util.sumOfThreeNum(arr,n);
+    
+/*try{
     if(n<3)
         throw error;
     else
@@ -31,4 +36,4 @@ try{
 catch(error){
     console.log("enter atleast 3 numbers");
 }
-
+*/
