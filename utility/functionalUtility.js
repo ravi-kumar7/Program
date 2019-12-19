@@ -258,4 +258,27 @@ exports.leapYear = (year) => {
         let output=("hello " + d + "..how r u?");
         return output;
     }
-    
+    /**
+     * 
+     */
+    exports.gambler=(n)=>
+    {
+        let stake,goal;
+        let bets=0;let wins=0;
+        let cash=stake;
+        while(cash>0 && cash<goal);
+        bets++;
+        if(Math.random()<0.5)
+        {
+            cash++;
+        }
+        else
+        {
+            cash--;
+        }
+        if(cash==goal)
+        wins++;
+        console.log(wins,"wins of",n);
+        console.log("percentage of won:",100.0*wins/n,"%");
+        console.log("avg bets =",bets/n);
+    }

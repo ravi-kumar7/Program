@@ -63,25 +63,77 @@ exports.sort = (arr) => {
         }
         return arr;
     }
+    /**
+     * Program to find Word from Word List using Binary Search.
+     */
 
 exports.binary = (stringArr, searchword) => {
-
-    let low = 0;
-    let high = stringArr.length - 1;
-    mid = Math.floor((low + high) / 2);    while (low <= high) {
-       
-        if (searchword == stringArr[mid]) {
+    /**
+     * Read in a list of words
+     * prompt the user to enter a word to search the list
+     * Use Arrays to sort the word list and then do the binary search
+     * Print the result if the word is found
+     */
+    let start=0;
+    let end=stringArr.length-1;
+    while(start<=end)
+    {
+        let mid=(start+end)/2;
+        if(searchword==stringArr[mid])
+        {
             return mid;
         }
-        else if (searchword > stringArr[mid]) {
-            low = mid + 1;
-        }
-        else (searchword < stringArr[mid])
+        else if(searchword.localeCompare(stringArr[mid]<0))
         {
-            high = mid - 1;
+            end=mid-1;
         }
-        mid = Math.floor((high + low) / 2);
+        else{
+            start=mid+1;
+        }
     }
-    return (stringArr[mid] != searchword) ? -1 : mid + 1;
-
+    return -1;
 }
+/**
+ * 
+ */
+exports.permutationIteration=(s)=>
+{
+    let myList=new Array();
+    myList.add(String.valueOf(s.charAt(0)));
+    for(let i=1;i<s.length();i++)
+    {
+        for(let j=myList.size()-1;j>=0;j--)
+        {
+            let str=myList.remove(j);
+            for(let k=0;k<=str.length();k++)
+            {
+                myList.add(str.substring(0,k)+s.charAt(i)+str.substring(k));
+            }
+        }
+    }
+    console.log(myList);
+}
+/**
+ * 
+ */
+exports.primeNum=()=>
+{
+    let count,num;
+    for(num=0;num<=1000;num++)
+    {
+        count=0;
+        for(let i=2;i<=num/2;i++)
+        {
+            if(num%i==0)
+            {
+                count++;
+                break;
+            }
+        }
+        if(count==0&&num!=1)
+        {
+            console.log(num);
+        }
+    }
+}
+
