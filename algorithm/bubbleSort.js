@@ -11,10 +11,10 @@
 * @module   : bubbleSort- This is optional if expeclictly its an npm or local package
 * @author   : Anjali<anjali.march19@gmail.com>
 * @version  : 1.0
-* @since    : 13-11-2019
+* @since    : 18-11-2019
 *
 ******************************************************************************/
-let arr=[3,5,6,1,2,44,89,32,21];
+let arr =[7,4,5,3,9,2,1];
 console.log("Before sorting the array is:",arr);
 let util=require("../utility/algorithmUtility");
 let sortedArray=util.sort(arr);

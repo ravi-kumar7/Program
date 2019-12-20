@@ -18,12 +18,12 @@ exports.sort = (arr) => {
     return arr;
 },
     /**
-     * string is an anagram of another 
+     * string is an anagram of another.
      */
     exports.isAnagram = (letterOne, letterTwo) => {
         /**
          * Taking two strings in array.
-         * Comparing string one with string two
+         * Comparing string one with string two.
          */
         if (letterOne.length != letterTwo.length) {
             return false;
@@ -47,7 +47,7 @@ exports.sort = (arr) => {
      */
     exports.inSort = (arr) =>
 /**
- * Reads in strings
+ * Reads in strings.
  * prints them in sorted order using insertion sort.
 
  */ {

@@ -4,7 +4,7 @@
 exports.leapYear = (year) => {
     /**
  * To check a given year is leap year or not.
- * return the resukt
+ * return the result
  */
     if (year.length != 4) {
         console.log("enter 4 digit no.");
@@ -136,7 +136,7 @@ exports.leapYear = (year) => {
     exports.powerof = (n) => {
         /**
          * table of the powers of 2 that are less than or equal to 2^N.
-         * return result
+         * return result.
          */
         try {
             let i = 0;
@@ -160,7 +160,7 @@ exports.leapYear = (year) => {
     exports.har = (n) => {
         /**
          * Harmonic Value N
-         * Print the Nth Harmonic Value
+         * Print the Nth Harmonic Value.
          */
         let h = 1;
         for (let i = 2; i <= n; i++) {
@@ -209,7 +209,7 @@ exports.leapYear = (year) => {
         /**
          *  taking i,j,k values as input.
          *  Find distinct triples
-         * return result
+         * return result.
          */
         {
             let found = true;
@@ -238,7 +238,7 @@ exports.leapYear = (year) => {
     exports.payments = (principal, year,Rate) => {
         /**
          * taking value  of Principal,Rate,Year
-         * calculate the payment
+         * calculate the payment.
          */
         let r = Rate / (12 * 100);
         let n = 12 * year;
@@ -252,7 +252,7 @@ exports.leapYear = (year) => {
     exports.strngs = (b,c) => {
         /**
          * Taking value for b and c
-         * replacing values
+         * replacing values.
          */
         let d = b.replace(c, b);
         let output=("hello " + d + "..how r u?");

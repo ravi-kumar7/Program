@@ -11,7 +11,7 @@
 * @module   : anagram- This is optional if expeclictly its an npm or local package
 * @author   : Anjali<anjali.march19@gmail.com>
 * @version  : 1.0
-* @since    : 13-11-2019
+* @since    : 17-11-2019
 *
 ******************************************************************************/
 let readline = require("readline-sync");
@@ -21,7 +21,7 @@ let util=require("../utility/algorithmUtility");
 let output=util.isAnagram(letterOne,letterTwo);
 if(output)
 {
-    console.log("it is an anagram");
+    console.log("it is an Anagram");
 }
 else
 {
