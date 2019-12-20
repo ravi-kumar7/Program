@@ -81,7 +81,7 @@ exports.binary = (stringArr, searchword) => {
         if (searchword == stringArr[mid]) {
             return mid;
         }
-        else if (searchword.localeCompare(stringArr[mid] < 0)) {
+        else if (searchword.localeCompare(stringArr[mid]) < 0) {
             end = mid - 1;
         }
         else {
