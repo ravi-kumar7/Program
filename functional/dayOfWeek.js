@@ -15,9 +15,15 @@
 *
 ******************************************************************************/
 let readline=require("readline-sync");
-let m=readline.question("enter the value of m:");
-let d=readline.question("enter the value of d:");
-let y=readline.question("enter the value of y:");
 let util=require("../utility/functionalUtility");
-let result=util.dayOf(m,d,y);
+try{
+let month=readline.question("enter the value of month:");
+let day=readline.question("enter the value of day:");
+let year=readline.question("enter the value of year:");
+let result=util.dayOfWeek(month,day,year);
 console.log(result);
+}
+catch(err)
+{
+    console.log(err);
+}

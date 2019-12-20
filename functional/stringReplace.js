@@ -15,9 +15,15 @@
  *
  ******************************************************************************/
 let readline=require("readline-sync");
+let util=require("../utility/functionalUtility");
+try{
 console.log('hello username..how r u?');
 let b=readline.question("enter the name:");
 let c=readline.question('enter the string you want to replace:')
-let util=require("../utility/functionalUtility");
 let output=util.strngs(b,c);
 console.log("after replacement:",output);
+}
+catch(err)
+{
+    console.log(err);
+}

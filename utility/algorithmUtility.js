@@ -1,11 +1,9 @@
 /**
  * Sort an array using Bubble Sort.
+ * Taking value in Array.
+ * Sort the Array.
  */
 exports.sort = (arr) => {
-    /**
-     * Taking value in Array.
-     * Sort the Array.
-     */
     for (let i = 0; i < arr.length - 1; i++) {
         for (let j = 0; j < arr.length - 1 - i; j++) {
             if (arr[j] > arr[j + 1]) {
@@ -19,22 +17,17 @@ exports.sort = (arr) => {
 },
     /**
      * string is an anagram of another.
+     * Taking two strings in array.
+     * Comparing string one with string two.
      */
-    exports.isAnagram = (letterOne, letterTwo) => {
-        /**
-         * Taking two strings in array.
-         * Comparing string one with string two.
-         */
-        if (letterOne.length != letterTwo.length) {
+    exports.isAnagram = (strOne, strTwo) => {
+        if (strOne.length != strTwo.length) {
             return false;
-            /**
-             * Find the given Strings are anagram or not.
-             */
         }
         else {
-            let letterOneArray = letterOne.toLowerCase().split('');
-            let letterTwoArray = letterTwo.toLowerCase().split('');
-            if (letterOneArray.sort().join('').localeCompare(letterTwoArray.sort().join('')) == 0) {
+            let strOneArr = strOne.toLowerCase().split('');
+            let strTwoArr = strTwo.toLowerCase().split('');
+            if (strOneArr.sort().join('').localeCompare(strTwoArr.sort().join('')) == 0) {
                 return true;
             }
             else {
@@ -44,13 +37,11 @@ exports.sort = (arr) => {
     },
     /**
      *  insertion sort to sort strings
+     * Reads in strings.
+     * prints them in sorted order using insertion sort.
      */
     exports.inSort = (arr) =>
-/**
- * Reads in strings.
- * prints them in sorted order using insertion sort.
-
- */ {
+ {
         for (let i = 1; i < arr.length; i++) {
             let key = arr[i];
             let j = i - 1;
@@ -65,15 +56,13 @@ exports.sort = (arr) => {
     }
 /**
  * Program to find Word from Word List using Binary Search.
+ * Read in a list of words
+ * prompt the user to enter a word to search the list
+ * Use Arrays to sort the word list and then do the binary search
+ * Print the result if the word is found
  */
 
 exports.binary = (stringArr, searchword) => {
-    /**
-     * Read in a list of words
-     * prompt the user to enter a word to search the list
-     * Use Arrays to sort the word list and then do the binary search
-     * Print the result if the word is found
-     */
     let start = 0;
     let end = stringArr.length - 1;
     while (start <= end) {
@@ -92,12 +81,10 @@ exports.binary = (stringArr, searchword) => {
 }
 /**
  * find the Prime numbers
+ * Taking value from 0-1000
+ * print prime numbers
  */
 exports.primeNum = () => {
-    /**
-     * Taking value from 0-1000
-     * print prime numbers
-     */
     let count, num;
     for (num = 0; num <= 1000; num++) {
         count = 0;
@@ -114,15 +101,13 @@ exports.primeNum = () => {
 }
 /**
  * Customize Message Demonstration
+ * read in the Message
+ * Replace <<name>> by first name
+ * replace <<full name>> by user full name.
+ * replace occurance of mobile number
+ * replace date
  */
 exports.data = (message,firstName,lastName,fullName,contactNumber,date) => {
-    /**
-     * read in the Message
-     * Replace <<name>> by first name
-     * replace <<full name>> by user full name.
-     * replace occurance of mobile number
-     * replace date
-     */
     try{
     message=message.replace("<<name>>", firstName);
     message=message.replace("<<full name>>", fullName);

@@ -14,26 +14,15 @@
 * @since        : 16-11-2019
 *
 ******************************************************************************/
-let readline=require("readline-sync");
-let num=readline.question("enter the number:");
-let arr = [12, 3, 4, 1, 6, 9]; 
-    let n =arr.length; 
-    let util=require("../utility/functionalUtility");
-let output=util.sumOfThreeNum(arr,n);
-    
-/*try{
-    if(n<3)
-        throw error;
-    else
-    {
-        var arr=[];
-        console.log("Enter" +(rows*cols) +"values into array");
-        for(let i=0;i<n;i++)
-            arr.push(require.question());
-        console.log(sumOfThreeNum(n,arr));
-    }
+let readline = require("readline-sync");
+let util = require("../utility/functionalUtility");
+try{
+let num = readline.question("enter the number:");
+let arr = [12, 3, 4, 1, 6, 9];
+let n = arr.length;
+let output = util.sumOfThreeNum(arr, n);
 }
-catch(error){
-    console.log("enter atleast 3 numbers");
+catch(err)
+{
+    console.log(err);
 }
-*/

@@ -11,12 +11,12 @@
 * @module       : binarySearch - This is optional if expeclictly its an npm or local package
 * @author       : Anjali<anjali.march19@gmail.com>
 * @version      : 1.0
-* @since        : 18-11-2019
+* @since        : 16-11-2019
 *
 ******************************************************************************/
 let readline=require("readline-sync");
 let util=require("../utility/algorithmUtility");
-let stringArr=["a","b","c","e","f","g","h"];
+let stringArr=["how","are","you"];
 let searchword=readline.question("enter the string:");
 let result=util.binary(stringArr,searchword);
 console.log("element found at:",stringArr,searchword);

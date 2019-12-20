@@ -15,7 +15,7 @@
 *
 ******************************************************************************/
 let readline=require("readline-sync");
-let year=readline.question("enter year:");
 let util=require("../utility/functionalUtility");
+let year=readline.question("enter year:");
 let result=util.leapYear(year);
 console.log("year is:",result);

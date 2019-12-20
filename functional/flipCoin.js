@@ -14,9 +14,14 @@
 * @since        : 14-11-2019
 *
 ******************************************************************************/
-let readline=require("readline-sync");
-console.log("enter number of times you want to flip the coin:");
-let choice=readline.question();
-let util=require("../utility/functionalUtility");
-let result=util.flip(choice);
-console.log("percentages are:",result);
+let readline = require("readline-sync");
+let util = require("../utility/functionalUtility");
+try{
+let choice = readline.question("enter number of times you want to flip the coin:");
+let result = util.flipCoin(choice);
+console.log("percentages are:", result);
+}
+catch(err)
+{
+    console.log(err);
+}

@@ -15,13 +15,20 @@
 *
 ******************************************************************************/
 let readline = require("readline-sync");
-let letterOne = readline.question("enter first Letter:");
-let letterTwo = readline.question("enter second Letter:");
 let util=require("../utility/algorithmUtility");
-let output=util.isAnagram(letterOne,letterTwo);
-if(output)
+let strOne = readline.question("enter first string:");
+let strTwo = readline.question("enter second string:");
+let output=util.isAnagram(strOne,strTwo);
+if(output==true)
 {
+    try{
+
     console.log("it is an Anagram");
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
 }
 else
 {

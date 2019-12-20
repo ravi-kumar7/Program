@@ -15,8 +15,14 @@
 *
 ******************************************************************************/
 let readline=require("readline-sync");
+let util=require("../utility/functionalUtility");
+try{
 let x=readline.question("enter the value of x:"); 
 let y=readline.question("enter the value of y:");
-let util=require("../utility/functionalUtility");
 let result=util.dist(x,y);
 console.log("distance from("+x+","+y+") to (0,0)=",result);
+}
+catch(err)
+{
+    console.log(err);
+}

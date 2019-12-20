@@ -14,8 +14,13 @@
 * @since        : 14-11-2019
 *
 ******************************************************************************/
-let readline=require("readline-sync");
-let n=readline.question("enter the value:");
-let util=require("../utility/functionalUtility");
-let result=util.har(n);
-console.log("Nth Harmonic Value",result);
+let readline = require("readline-sync");
+let util = require("../utility/functionalUtility");
+try {
+    let value = readline.question("enter the value:");
+    let result = util.harmonic(value);
+    console.log("Nth Harmonic Value", result);
+}
+catch (err) {
+    console.log(err);
+}

@@ -1,11 +1,10 @@
 /**
  * To check a given year is leap year or not.
+ * Taking the value of year from user.
+ * return resul.
  */
 exports.leapYear = (year) => {
-    /**
- * To check a given year is leap year or not.
- * return the result
- */
+    try{
     if (year.length != 4) {
         console.log("enter 4 digit no.");
     }
@@ -15,44 +14,42 @@ exports.leapYear = (year) => {
     else {
         console.log(year, "is not a leap year");
     }
-    
+}
+catch(err)
+{
+    console.log(err);
+}
 
 },
-
     /**
      * prints the day of the week that date falls on
+     * Taking a month as input
+     * Taking a day as input
+     * Taking a year as input
+     * return the result
      */
-    exports.dayOf = (m, d, y) => {
-        /**
-         * Taking a date as input 
-         * prints the day of the week that date falls on
-         * return the result
-         */
-        let y0 = y - (14 - m) / 12;
+    exports.dayOfWeek = (month, day, year) => {
+        let y0 = year - (14 - month) / 12;
         let x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
-        let m0 = m + 12 * ((14 - m) / 12) - 2;
-        let d0 = (d + x + (31 * m0) / 12) % 7;
+        let m0 = month + 12 * ((14 - month) / 12) - 2;
+        let d0 = (day + x + (31 * m0) / 12) % 7;
         return d0;
     },
 
     /**
      * Program to print the wind chill
+     * Takes two arguments temperature and windSpeed
+     * temperature temperature (in Fahrenheit)
+     * wind speed windSpeed(in miles per hour)
+     * return w
      */
-    exports.windChill = (t, v) => {
-        /**
-         * Takes two arguments t and v
-         * temperature t (in Fahrenheit)
-         * wind speed v (in miles per hour)
-         * return w
-         */
+    exports.windChill = (temperature, windSpeed) => {
         try {
-
-
-            if ((t > 50) || (v > 120 || v < 3)) {
+            if ((temperature > 50) || (windSpeed > 120 || windSpeed < 3)) {
                 console.log("error");
             }
             else {
-                let w = 35.74 + 0.6215 * t + (0.4275 * t - 35.75) * Math.pow(v, 0.16);
+                let w = 35.74 + 0.6215 * temperature + (0.4275 * temperature - 35.75) * Math.pow(windSpeed, 0.16);
                 return w;
             }
         }
@@ -63,22 +60,20 @@ exports.leapYear = (year) => {
     },
     /**
      * Program to find Quadratic equation
+     * a-value of variable a
+     * b-value of variable b
+     * c-value of variable c
+     * find the root1,root2  values
+     * return the result
      */
     exports.quadratic = (a, b, c) => {
-        /**
-         * a-value of variable a
-         * b-value of variable b
-         * c-value of variable c
-         * find the root1,root2  values
-         * return the result
-         */
         try {
             let root1 = 0, root2 = 0;
             let delta = Math.sqrt((b * b) - (4 * a * c));
             root1 = (-b + Math.sqrt(delta)) / (2 * a);
             root2 = (-b - Math.sqrt(delta)) / (2 * a);
             let result = [root1, root2];
-            return  result;
+            return result;
         }
         catch (e) {
             console.log(e);
@@ -87,28 +82,26 @@ exports.leapYear = (year) => {
     },
     /**
      *  program to find prime factorization
+     * Taking value of num from user.
+     * return the value.
      */
-    exports.factorial = (N) => {
-        /**
-         * Computes the prime factorization of N
-         * return the value
-         */
+    exports.factorial = (num) => {
         try {
-            for (let factor = 2; factor * factor <= N; factor++) {
-                while (N % factor == 0) {
+            for (let factor = 2; factor * factor <= num; factor++) {
+                while (num % factor == 0) {
                     console.log(factor + " ");
-                    N = N / factor;
+                    num = num / factor;
                 }
             }
-            if (N > 1)
-                console.log(N);
+            if (num > 1)
+                console.log(num);
             else
                 console.log();
         }
         catch (e) {
             console.log(e);
         }
-        
+
     },
     /**
      *  program to print the Euclidean distance from the point (x, y) to the origin (0, 0).
@@ -117,9 +110,6 @@ exports.leapYear = (year) => {
      * return distance
      */
     exports.dist = (x, y) => {
-        /**
-         * Find Euclidean distance
-         */
         try {
             let distance = Math.sqrt(x * x + y * y);
             return distance;
@@ -132,21 +122,18 @@ exports.leapYear = (year) => {
     },
     /**
      * Program to print a table of the powers of 2
+     * taking the value of num from user.
      */
-    exports.powerof = (n) => {
-        /**
-         * table of the powers of 2 that are less than or equal to 2^N.
-         * return result.
-         */
+    exports.powerof = (num) => {
         try {
             let i = 0;
             let power = 1;
-            console.log("power of 2^" + n);
-            while (i <= n) {
+            console.log("power of 2^" + num);
+            while (i <= num) {
                 console.log("2^ " + i + "=" + power);
                 power = power * 2;
                 i++;
-                
+
             }
         }
         catch (e) {
@@ -155,15 +142,13 @@ exports.leapYear = (year) => {
     },
     /**
      * To print Nth harmonic number
+     * taking value from user
+     * Print the Nth Harmonic Value
      */
 
-    exports.har = (n) => {
-        /**
-         * Harmonic Value N
-         * Print the Nth Harmonic Value.
-         */
+    exports.harmonic = (value) => {
         let h = 1;
-        for (let i = 2; i <= n; i++) {
+        for (let i = 2; i <= value; i++) {
             h = h + 1 / i;
         }
         return h;
@@ -171,13 +156,11 @@ exports.leapYear = (year) => {
     },
     /**
      * Program to Flip Coin and print percentage of Heads and Tails
+     * taking value from user number of times to Flip Coin
+     * Use Random Function to get value between 0 and 1
+     * Print Percentage of Head vs Tails
      */
-    exports.flip = (choice) => {
-        /**
-         * number of times to Flip Coin
-         * Use Random Function to get value between 0 and 1
-         * Print Percentage of Head vs Tails
-         */
+    exports.flipCoin = (choice) => {
         try {
             let head_count = 0; tail_count = 0;
             let head, tail;
@@ -198,14 +181,14 @@ exports.leapYear = (year) => {
         catch (e) {
             console.log(e);
         }
-        
+
 
 
     },
     /**
      * Sum of three Integer adds to zero
      */
-    exports.sumOfThreeNum = (arr,n) => {
+    exports.sumOfThreeNum = (arr, n) => {
         /**
          *  taking i,j,k values as input.
          *  Find distinct triples
@@ -217,7 +200,7 @@ exports.leapYear = (year) => {
                 for (let j = i + 1; j < n - 1; j++) {
                     for (let k = j + 1; k < n; k++) {
                         if (arr[i] + arr[j] + arr[k] == 0) {
-                            console.log(arr[i]+ " "+ arr[j]+ " "+ arr[k]);
+                            console.log(arr[i] + " " + arr[j] + " " + arr[k]);
                             found = true;
                         }
                     }
@@ -234,28 +217,23 @@ exports.leapYear = (year) => {
     },
     /**
      * Program to  calculate monthly Payment
+     * taking value  of Principal,Rate,Year
+     * calculate the payment.
      */
-    exports.payments = (principal, year,Rate) => {
-        /**
-         * taking value  of Principal,Rate,Year
-         * calculate the payment.
-         */
+    exports.payments = (principal, year, Rate) => {
         let r = Rate / (12 * 100);
         let n = 12 * year;
         let payment = (principal * r) / (1 - Math.pow(1 + r, -n))
         return payment;
-        
+
     },
     /**
      *Replace String 
+     *Taking value for b and c
+     *replacing values.
      */
-    exports.strngs = (b,c) => {
-        /**
-         * Taking value for b and c
-         * replacing values.
-         */
+    exports.strngs = (b, c) => {
         let d = b.replace(c, b);
-        let output=("hello " + d + "..how r u?");
+        let output = ("hello " + d + "..how r u?");
         return output;
     }
-   

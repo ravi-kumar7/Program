@@ -12,10 +12,17 @@
 * @module      : power- This is optional if expeclictly its an npm or local package
 * @author      : Anjali<anjali.march19@gmail.com>
 * @version     : 1.0
-* @since       : 15-11-2019
+* @since       : 17-11-2019
 *
 ******************************************************************************/
 let readline=require("readline-sync");
-let n=readline.question("enter the value:");
 let util=require("../utility/functionalUtility");
-let result=util.powerof(n);
+try{
+let num=readline.question("enter the value:");
+let result=util.powerof(num);
+console.log("result is:",result);
+}
+catch(e)
+{
+    console.log(e);
+}

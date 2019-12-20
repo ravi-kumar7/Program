@@ -11,13 +11,19 @@
 * @module       : quadratic- This is optional if expeclictly its an npm or local package
 * @author       : Anjali<anjali.march19@gmail.com>
 * @version      : 1.0
-* @since        : 15-11-2019
+* @since        : 16-11-2019
 *
 ******************************************************************************/
 let readline=require("readline-sync");
-let a=readline.question("enter the value of a:");
-let b=readline.question("enter the value of b:");
-let c=readline.question("enter the value of c:");
 let util=require("../utility/functionalUtility");
+try{
+let a=readline.questionInt("enter the value of a:");
+let b=readline.questionInt("enter the value of b:");
+let c=readline.questionInt("enter the value of c:");
 let res=util.quadratic(a,b,c);
 console.log("values are:",res);
+}
+catch(err)
+{
+    console.log(err);
+}
