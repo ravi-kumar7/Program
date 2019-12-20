@@ -19,18 +19,20 @@ let util=require("../utility/algorithmUtility");
 let strOne = readline.question("enter first string:");
 let strTwo = readline.question("enter second string:");
 let output=util.isAnagram(strOne,strTwo);
+try{
 if(output==true)
 {
-    try{
+    
 
     console.log("it is an Anagram");
-    }
-    catch(err)
-    {
-        console.log(err);
-    }
+    
 }
 else
 {
     console.log("Letters are not an anagrm");   
+}
+}
+catch(err)
+{
+    console.log(e);
 }
