@@ -15,7 +15,7 @@ exports.unOrderedList = (stringArray, searchElement) => {
         console.log("{element deleted successfully");
     }
     let elementWrite = list.show()
-writeToFile("../../Anjali.txt", elementWrite);
+    writeFile("../../Anjali.txt", elementWrite);
 }
 class Node {
     constructor(searchElement) {
@@ -77,6 +77,25 @@ class linkedList {
         this.size++;
     }
     show() {
-
+        let present=this.head;
+        let string="";
+        while(present)
+        {
+            string=string+present.searchElement+" ";
+            present=present.next;
+        }
+        console.log(string);
+        return string;
     }
+}
+function writeFile(fileName,data)
+{
+    let fs=require('fs');
+    fs.writeFile(fileName,data,function(err)
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+    });
 }
