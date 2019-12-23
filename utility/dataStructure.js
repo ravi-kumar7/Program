@@ -3,7 +3,7 @@
  */
 exports.unOrderedList = (stringArray, searchElement) => {
     let list = new linkedList;
-    for (let i = 0; stringArray.length; i++) {
+    for (let i = 0; i<stringArray.length; i++) {
         list.add(stringArray[i]);
     }
     if (list.search(searchElement) == -1) {
@@ -15,8 +15,7 @@ exports.unOrderedList = (stringArray, searchElement) => {
         console.log("{element deleted successfully");
     }
     let elementWrite = list.show()
-
-    writeToFile("../Anjali.txt", elementWrite);
+writeToFile("../../Anjali.txt", elementWrite);
 }
 class Node {
     constructor(searchElement) {
@@ -45,7 +44,7 @@ class linkedList {
     remove(searchElement) {
         let present = this.head;
         let previous = null;
-        while (presnt != null) {
+        while (present != null) {
             if (present.searchElement === searchElement) {
                 if (previous == null) {
                     this.head = present.next;
@@ -71,9 +70,9 @@ class linkedList {
         else {
             present = this.head;
             while (present.next) {
-                present = cpresent.nest;
+                present = present.next;
             }
-            present.nest = node;
+            present.next = node;
         }
         this.size++;
     }
