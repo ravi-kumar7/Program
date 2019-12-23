@@ -16,7 +16,12 @@
 ******************************************************************************/
 let readline=require("readline-sync");
 let util=require("../utility/algorithmUtility");
-let arr =[7,4,5,3,9,2,1];
+let arr=[];
+let size=readline.question("enter the size of array:")
+let i;
+for(i=0;i<size-1;i++)
+arr[i]=readline.question("enter array element:"+(i+1));
+//let arr =[7,4,5,3,9,2,1];
 console.log("Before sorting the array is:",arr);
 let sortedArray=util.sort(arr);
 console.log("After sorting the array is:",sortedArray);

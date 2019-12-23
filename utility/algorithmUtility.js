@@ -40,8 +40,7 @@ exports.sort = (arr) => {
      * Reads in strings.
      * prints them in sorted order using insertion sort.
      */
-    exports.inSort = (arr) =>
- {
+    exports.inSort = (arr) => {
         for (let i = 1; i < arr.length; i++) {
             let key = arr[i];
             let j = i - 1;
@@ -107,15 +106,15 @@ exports.primeNum = () => {
  * replace occurance of mobile number
  * replace date
  */
-exports.data = (message,firstName,lastName,fullName,contactNumber,date) => {
-    try{
-    message=message.replace("<<name>>", firstName);
-    message=message.replace("<<full name>>", fullName);
-    message=message.replace("XXXXXXXXXX", contactNumber);
-    message=message.replace("01/01/2016", date);
-    console.log(message);
-}
-catch (error) {
-    console.log(error);
-}
+exports.data = (message, firstName, lastName, fullName, contactNumber, date) => {
+    try {
+        message = message.replace("<<name>>", firstName);
+        message = message.replace("<<full name>>", fullName);
+        message = message.replace("XXXXXXXXXX", contactNumber);
+        message = message.replace("01/01/2016", date);
+        console.log(message);
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
