@@ -5,6 +5,7 @@
  * if it found then remove the word from the List.
  * In the end save the list into a file
  */
+
 exports.unOrderedList = (stringArray, searchElement) => {
     let list = new linkedList;
     for (let i = 0; i < stringArray.length; i++) {
@@ -99,40 +100,12 @@ function writeFile(fileName, data) {
         }
     });
 }
+
 /**
  * 
  */
-exports.orderedList = (arr,searchElement) => {
-    let list=new linkedList;
-    for(let i=0;i<arr.length;i++)
-    {
-        list.add(arr[i]);
-    }
-    if(list.search(searchElement==-1))
-    {
-        console.log("element added successfully");
-    }
-    else{
-list.remove(searchElement);
-console.log|("element deleted successfully");
-}
-let dataWrite=list.show()
-writeFile("/../program.txt",dataWrite);s
-}
-class Node{
-    constructor(searchElement)
-    {
-        this.next=null;
-        this.size=0;
-    }
-}
-class linkedList{
-    constructor()
-    {
-        this.head=null;
-        this.size=0;
-    }
-}
+exports.unOrderedList=(data,searchElement)=>
+{
 search(searchElement)
 {
     let count=0;
@@ -141,11 +114,11 @@ search(searchElement)
     {
         if(present.searchElement==searchElement)
         {
-            return count;
+            return present;
         }
         count++;
         present=present.next;
-    }return -1;
+    }
 }
 remove(searchElement)
 {
@@ -153,52 +126,80 @@ remove(searchElement)
     let previous=null;
     while(present!=null)
     {
-if(present.searchElement==searchElement)
-{
-    if(previous==null)
-    {
-        this.head=present.next;
-    }
-
-else
-{
-    previous.next=present.next;
-}
-this.size--;
-return present.searchElement;
-    }
-    previous=present;
-    present=present.next;
-}
-return -1;
+        if(present.searchElement==searchElement)
+        {
+            if(present==null)
+            {
+                this.head=present.next;
+            }
+            else{
+previous.next=present.next;
+            }
+            size--;
+            return present.searchElement;
+        }
+        previous=present;
+        present=present.next;
+    }                        
+    return -1;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 }
 add(searchElement)
 {
     let node=new Node(searchElement)
+    let present;
+    if(this.head==null)
     {
-        let present;
-        if(this.head==null)
-        {
-            this.head=node;
-        }
-        else
+        this.head=node;
+    }
+    else{
         present=this.head;
         while(present.next)
         {
-            present=present.next;
+            present.next=node;
         }
-        present.next=node;
     }
     this.size++;
 }
-function writeFile(fileName,data)
-{
-    let fs=require('fs');
-    fs.writeFile(fileName,data,function(err)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    sort(data)
     {
-        if(err)
-        {
-            console.log(err);
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
         }
-    });
+
+}
 }
