@@ -36,57 +36,57 @@ class linkedList {
     }
     search(searchElement) {
         let count = 0;
-        let present = this.head;
-        while (present != null) {
-            if (present.searchElement === searchElement) {
+        let presentNode = this.head;
+        while (presentNode != null) {
+            if (presentNode.searchElement === searchElement) {
                 return count;
             }
             count++;
-            present = present.next;
+            presentNode = presentNode.next;
         }
         return -1
     }
     remove(searchElement) {
-        let present = this.head;
-        let previous = null;
-        while (present != null) {
-            if (present.searchElement === searchElement) {
+        let presentNode = this.head;
+        let previousNode = null;
+        while (presentNode != null) {
+            if (presentNode.searchElement === searchElement) {
                 if (previous == null) {
-                    this.head = present.next;
+                    this.head = presentNode.next;
                 }
                 else {
-                    previous.next = present.next;
+                    previousNode.next = presentNode.next;
                 }
                 this.size++;
-                return present.searchElement;
+                return presentNode.searchElement;
             }
-            previous = present;
-            present = present.next;
+            previousNode = presentNode;
+            presentNode = presentNode.next;
 
         }
         return -1;
     }
     add(searchElement) {
         let node = new Node(searchElement);
-        let present;
+        let presentNode;
         if (this.head == null) {
             this.head = node;
         }
         else {
-            present = this.head;
-            while (present.next) {
-                present = present.next;
+            presentNode = this.head;
+            while (presentNode.next) {
+                presentNode = presentNode.next;
             }
-            present.next = node;
+            presentNode.next = node;
         }
         this.size++;
     }
     show() {
-        let present = this.head;
+        let presentNode = this.head;
         let string = "";
-        while (present) {
-            string = string + present.searchElement + " ";
-            present = present.next;
+        while (presentNode) {
+            string = string + presentNode.searchElement + " ";
+            presentNode = presentNode.next;
         }
         console.log(string);
         return string;
@@ -104,6 +104,7 @@ function writeFile(fileName, data) {
 /**
  * 
  */
+/*
 exports.unOrderedList=(data,searchElement)=>
 {
 search(searchElement)
@@ -161,45 +162,58 @@ add(searchElement)
     this.size++;
 }
 
+*/
 
 
+/**
+ * 
+ */
+exports.cashCounter=(option)=>
+{
+let balance=5000,withdraw,deposite;
+switch(option)
+{
+    case 1:
+        console.log("enter the money you want to withdraw:");
+        withdraw=require("readline-sync");
+        if(balance>=withdraw)
+        {
+            balance=balance-withdraw;
+            console.log("your current balance is:", balance);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    sort(data)
-    {
-        for (let i = 0; i < arr.length - 1; i++) {
-            for (let j = 0; j < arr.length - 1 - i; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    let temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
         }
+        else{
+            console.log("Insufficient balance")
+        }
+        break;
+    case 2:
+        console.log("enter how much amount you want to deposite:")
+        deposite=require("readline-sync");
+        balance=balance+deposite;
+        console.log("your current balance is:", balance);
+        break;
+    case 3:
+        console.log("your current balance is:", balance);
+         break;
+    case 4:
+        
+}
+}
 
-}
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
