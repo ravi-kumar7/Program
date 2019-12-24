@@ -1,9 +1,9 @@
 /**
  * Read the Text from a file, split it into words and arrange it as Linked List. 
- * @param Take a user input to search a Word in the List.
- * @return If the Word is not found then add it to the list and return the list.
- * @return if it found then remove the word from the List and then return the list.
- * @return In the end save the list into a file
+ * @param {string} Take a user input to search a Word in the List.
+ * @return {string} If the Word is not found then add it to the list and return the list.
+ * @return {string} if it found then remove the word from the List and then return the list.
+ * @return {string} In the end save the list into a file
  */
 
 exports.unOrderedList = (stringArray, searchElement) => {
@@ -166,54 +166,49 @@ add(searchElement)
 
 
 /**
- * 
+ * Program to create Banking Cash Counter where people come in to deposit Cash and withdraw Cash. 
+ * @param {number} Taking input from user.
+ * @return {number} return output
  */
-exports.cashCounter=(option)=>
-{
-let balance=5000,withdraw,deposite;
-switch(option)
-{
-    case 1:
-        console.log("enter the money you want to withdraw:");
-        withdraw=require("readline-sync");
-        if(balance>=withdraw)
+exports.cashCounter = (choice) => {
+    let balance = 5000, withdraw, deposite;
+    function get_balance() {
+        console.log("your current balance is:", balance);
+        atm();
+    }
+    function make_withdraw() {
+        withdraw = readline.questionInt("enter the amount you want to withdraw:");
+        balance = balance - withdraw;
+        console.log("your current balancee is:", balance);
+    }
+    function make_deposite() {
+        deposite = readline.questionInt("enter the amount you want to deposite:");
+        balance = balance + deposite;
+        get_balance();
+    }
+    function exit() {
+        let leave = confirm("are you sure you want to leave?:");
+        if (leave) {
+            window.close();
+        }
+        else {
+            atm();
+        }
+    }
+    function atm() {
+        if (choice == 1) {
+            get_balance();
+        }
+        else if (choice == 2) {
+            make_deposite();
+        }
+        else if (choice == 3) {
+            make_withdraw();
+        }
+        else (choice == 4)
         {
-            balance=balance-withdraw;
-            console.log("your current balance is:", balance);
-
+            exit();
         }
-        else{
-            console.log("Insufficient balance")
-        }
-        break;
-    case 2:
-        console.log("enter how much amount you want to deposite:")
-        deposite=require("readline-sync");
-        balance=balance+deposite;
-        console.log("your current balance is:", balance);
-        break;
-    case 3:
-        console.log("your current balance is:", balance);
-         break;
-    case 4:
-        
+
+    }
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

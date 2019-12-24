@@ -1,7 +1,7 @@
 /**
  * Sort an array using Bubble Sort.
- * @param Taking value in Array.
- * @return Sorting the Array.
+ * @param {string} Taking value in Array.
+ * @return {string} Sorting the Array.
  */
 exports.sort = (arr) => {
     for (let i = 0; i < arr.length - 1; i++) {
@@ -17,8 +17,8 @@ exports.sort = (arr) => {
 },
     /**
      * string is an anagram of another.
-     * @param Taking two strings in array.
-     * @return Comparing string one with string two and return the result.
+     * @param {string} Taking two strings in array.
+     * @return {string} Comparing string one with string two and return the result.
      */
     exports.isAnagram = (strOne, strTwo) => {
         if (strOne.length != strTwo.length) {
@@ -37,8 +37,8 @@ exports.sort = (arr) => {
     },
     /**
      *  insertion sort to sort strings
-     * @param Reads in strings.
-     * @return prints them in sorted order using insertion sort.
+     * @param {string} Reads in strings.
+     * @return {string} prints them in sorted order using insertion sort.
      */
     exports.inSort = (arr) => {
         for (let i = 1; i < arr.length; i++) {
@@ -55,10 +55,10 @@ exports.sort = (arr) => {
     }
 /**
  * Program to find Word from Word List using Binary Search.
- * @param Read in a list of words
- * @param prompt the user to enter a word to search the list
- * @param Use Arrays to sort the word list and then do the binary search
- * @return Print the result if the word is found
+ * @param {string} Read in a list of words
+ * @param {string} prompt the user to enter a word to search the list
+ * @param {string} Use Arrays to sort the word list and then do the binary search
+ * @return {string} Print the result if the word is found
  */
 
 exports.binary = (stringArr, searchword) => {
@@ -80,8 +80,8 @@ exports.binary = (stringArr, searchword) => {
 }
 /**
  * find the Prime numbers
- * @param Taking value from 0-1000
- * @return print prime numbers
+ * @param {number} Taking value from 0-1000
+ * @return {number} print prime numbers
  */
 exports.primeNum = () => {
     let count, num;
@@ -100,11 +100,11 @@ exports.primeNum = () => {
 }
 /**
  * Customize Message Demonstration
- * @param read in the Message
- * @param Replace <<name>> by first name
- * @param replace <<full name>> by user full name.
- * @param replace occurance of mobile number
- * @return replace date
+ * @param {string} read in the Message
+ * @param {string} Replace <<name>> by first name
+ * @param {string} replace <<full name>> by user full name.
+ * @param {string} replace occurance of mobile number
+ * @return {string} replace date
  */
 exports.data = (message, firstName, lastName, fullName, contactNumber, date) => {
     try {

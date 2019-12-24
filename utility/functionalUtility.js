@@ -1,7 +1,7 @@
 /**
  * To check a given year is leap year or not.
- * @param Taking the value of year from user.
- * @return return result.
+ * @param {number} Taking the value of year from user.
+ * @return {number} return result.
  */
 exports.leapYear = (year) => {
     try{
@@ -23,10 +23,10 @@ catch(err)
 },
     /**
      * prints the day of the week that date falls on
-     * @param Taking a month as input
-     * @param Taking a day as input
-     * @param Taking a year as input
-     * @return return the result
+     * @param {number} Taking a month as input
+     * @param {number} Taking a day as input
+     * @param {number} Taking a year as input
+     * @return {number} return the result
      */
     exports.dayOfWeek = (month, day, year) => {
         let y0 = year - (14 - month) / 12;
@@ -38,10 +38,10 @@ catch(err)
 
     /**
      * Program to print the wind chill
-     * @param Takes two arguments temperature and windSpeed
-     * @param temperature temperature (in Fahrenheit)
-     * @param wind speed windSpeed(in miles per hour)
-     * @return return w
+     * @param {number} Takes two arguments temperature and windSpeed
+     * @param {number} temperature temperature (in Fahrenheit)
+     * @param {number} wind speed windSpeed(in miles per hour)
+     * @return {number} return w
      */
     exports.windChill = (temperature, windSpeed) => {
         try {
@@ -60,11 +60,11 @@ catch(err)
     },
     /**
      * Program to find Quadratic equation
-     * @param a-value of variable a
-     * @param b-value of variable b
-     * @param c-value of variable c
-     * @param find the root1,root2  values
-     * @return return the result
+     * @param {number} a-value of variable a
+     * @param {number} b-value of variable b
+     * @param {number} c-value of variable c
+     * @param {number} find the root1,root2  values
+     * @return {number} return the result
      */
     exports.quadratic = (a, b, c) => {
         try {
@@ -82,8 +82,8 @@ catch(err)
     },
     /**
      *  program to find prime factorization
-     * @param Taking value of num from user.
-     * @return return the value.
+     * @param {number} Taking value of num from user.
+     * @return {number} return the value.
      */
     exports.factorial = (num) => {
         try {
@@ -105,9 +105,9 @@ catch(err)
     },
     /**
      *  program to print the Euclidean distance from the point (x, y) to the origin (0, 0).
-     * @param x-value of x
-     * @param y-value of y
-     * @return return distance
+     * @param {number} x-value of x
+     * @param {number} y-value of y
+     * @return {number} return distance
      */
     exports.dist = (x, y) => {
         try {
@@ -122,8 +122,8 @@ catch(err)
     },
     /**
      * Program to print a table of the powers of 2
-     * @param taking the value of num from user.
-     * @return return the result.
+     * @param {number} taking the value of num from user.
+     * @return {number} return the result.
      */
     exports.powerof = (num) => {
         try {
@@ -143,8 +143,8 @@ catch(err)
     },
     /**
      * To print Nth harmonic number
-     * @param taking value from user
-     * @return Print the Nth Harmonic Value
+     * @param {number} taking value from user
+     * @return {number} Print the Nth Harmonic Value
      */
 
     exports.harmonic = (value) => {
@@ -157,9 +157,9 @@ catch(err)
     },
     /**
      * Program to Flip Coin and print percentage of Heads and Tails
-     * @param taking value from user number of times to Flip Coin
+     * @param {number} taking value from user number of times to Flip Coin
      * Use Random Function to get value between 0 and 1
-     * @return Print Percentage of Head vs Tails
+     * @return {number} Print Percentage of Head vs Tails
      */
     exports.flipCoin = (choice) => {
         try {
@@ -188,9 +188,9 @@ catch(err)
     },
     /**
      * Sum of three Integer adds to zero
-     *@param taking i,j,k values as input.
+     *@param {number} taking i,j,k values as input.
      * Find distinct triples
-     * @return return result.
+     * @return {number} return result.
      */
     exports.sumOfThreeNum = (arr, n) => {
         {
@@ -216,8 +216,8 @@ catch(err)
     },
     /**
      * Program to  calculate monthly Payment
-     * @param taking value  of Principal,Rate,Year
-     * @return calculate the payment.
+     * @param {number} taking value  of Principal,Rate,Year
+     * @return {number} calculate the payment.
      */
     exports.payments = (principal, year, Rate) => {
         let r = Rate / (12 * 100);
@@ -228,8 +228,8 @@ catch(err)
     },
     /**
      *Replace String 
-     *@param Taking value for b and c
-     *@return replacing values.
+     *@param {string} Taking value for b and c
+     *@return {string} replacing values.
      */
     exports.strngs = (b, c) => {
         let d = b.replace(c, b);
