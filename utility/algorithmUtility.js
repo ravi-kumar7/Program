@@ -1,7 +1,7 @@
 /**
  * Sort an array using Bubble Sort.
- * Taking value in Array.
- * Sort the Array.
+ * @param Taking value in Array.
+ * @return Sorting the Array.
  */
 exports.sort = (arr) => {
     for (let i = 0; i < arr.length - 1; i++) {
@@ -17,8 +17,8 @@ exports.sort = (arr) => {
 },
     /**
      * string is an anagram of another.
-     * Taking two strings in array.
-     * Comparing string one with string two.
+     * @param Taking two strings in array.
+     * @return Comparing string one with string two and return the result.
      */
     exports.isAnagram = (strOne, strTwo) => {
         if (strOne.length != strTwo.length) {
@@ -37,8 +37,8 @@ exports.sort = (arr) => {
     },
     /**
      *  insertion sort to sort strings
-     * Reads in strings.
-     * prints them in sorted order using insertion sort.
+     * @param Reads in strings.
+     * @return prints them in sorted order using insertion sort.
      */
     exports.inSort = (arr) => {
         for (let i = 1; i < arr.length; i++) {
@@ -55,10 +55,10 @@ exports.sort = (arr) => {
     }
 /**
  * Program to find Word from Word List using Binary Search.
- * Read in a list of words
- * prompt the user to enter a word to search the list
- * Use Arrays to sort the word list and then do the binary search
- * Print the result if the word is found
+ * @param Read in a list of words
+ * @param prompt the user to enter a word to search the list
+ * @param Use Arrays to sort the word list and then do the binary search
+ * @return Print the result if the word is found
  */
 
 exports.binary = (stringArr, searchword) => {
@@ -80,8 +80,8 @@ exports.binary = (stringArr, searchword) => {
 }
 /**
  * find the Prime numbers
- * Taking value from 0-1000
- * print prime numbers
+ * @param Taking value from 0-1000
+ * @return print prime numbers
  */
 exports.primeNum = () => {
     let count, num;
@@ -100,11 +100,11 @@ exports.primeNum = () => {
 }
 /**
  * Customize Message Demonstration
- * read in the Message
- * Replace <<name>> by first name
- * replace <<full name>> by user full name.
- * replace occurance of mobile number
- * replace date
+ * @param read in the Message
+ * @param Replace <<name>> by first name
+ * @param replace <<full name>> by user full name.
+ * @param replace occurance of mobile number
+ * @return replace date
  */
 exports.data = (message, firstName, lastName, fullName, contactNumber, date) => {
     try {
