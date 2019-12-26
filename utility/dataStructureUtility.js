@@ -106,6 +106,7 @@ function writeFile(fileName, data) {
  */
 exports.orderedList = (arr, searchElement) => {
     let list = new linkedList;
+    arr=list.sort(arr);
     for (let i = 0; i < arr.length; i++) {
         list.add(arr[i]);
     }
@@ -135,7 +136,7 @@ class linkedList {
     sort(arr) {
         for (let i = 0; i < arr.length - 1; i++) {
             for (let j = 0; j < arr.length - 1 - i; j++) {
-                if (arr[j] > arr[j + 1]) {
+                if (Number(arr[j]) > Number(arr[j + 1])) {
                     let temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
@@ -161,7 +162,7 @@ class linkedList {
         let previousNode = null;
         while (presentNode != null) {
             if (presentNode.searchElement === searchElement) {
-                if (previous == null) {
+                if (previousNode == null) {
                     this.head = presentNode.next;
                 }
                 else {
