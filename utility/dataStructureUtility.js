@@ -104,9 +104,8 @@ function writeFile(fileName, data) {
 /**
  * 
  */
-exports.orderedList=(arr,searchElement)=>
-{
-let list = new linkedList;
+exports.orderedList = (arr, searchElement) => {
+    let list = new linkedList;
     for (let i = 0; i < arr.length; i++) {
         list.add(arr[i]);
     }
@@ -133,8 +132,7 @@ class linkedList {
         this.head = null;
         this.size = 0;
     }
-    sort(arr)
-    {
+    sort(arr) {
         for (let i = 0; i < arr.length - 1; i++) {
             for (let j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -197,10 +195,10 @@ class linkedList {
         let presentNode = this.head;
         let string = "";
         while (presentNode) {
-            string = string + presentNode.searchElement + " ";
+            string = string + ' ' + presentNode.searchElement;
             presentNode = presentNode.next;
         }
-        console.log(presentNode,searchElement);
+        console.log(string);
         return string;
     }
 }
@@ -259,4 +257,23 @@ exports.cashCounter = (choice) => {
         }
 
     }
+}
+/**
+ * 
+ */
+balancedParentheses = (string) => {
+    let ch;
+    let stack = [];
+    for (let i = 0; i < string.length; i++)
+        ch = string.charAt(i);
+    if (ch == '(' || ch=='{' || ch=='[') {
+        stack.push(ch);
+    }
+    else {
+        if (ch == ')' || ch=='}' || ch==']') {
+            stack.pop;
+        }
+   
+    return stack;
+}
 }
