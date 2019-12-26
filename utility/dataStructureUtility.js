@@ -5,7 +5,7 @@
  * @return {string} if it found then remove the word from the List and then return the list.
  * @return {string} In the end save the list into a file
  */
-
+/*
 exports.unOrderedList = (stringArray, searchElement) => {
     let list = new linkedList;
     for (let i = 0; i < stringArray.length; i++) {
@@ -100,70 +100,118 @@ function writeFile(fileName, data) {
         }
     });
 }
-
+*/
 /**
  * 
  */
-/*
-exports.unOrderedList=(data,searchElement)=>
+exports.orderedList=(arr,searchElement)=>
 {
-search(searchElement)
-{
-    let count=0;
-    let present=this.head;
-    while(present!=null)
-    {
-        if(present.searchElement==searchElement)
-        {
-            return present;
-        }
-        count++;
-        present=present.next;
+let list = new linkedList;
+    for (let i = 0; i < arr.length; i++) {
+        list.add(arr[i]);
+    }
+    if (list.search(searchElement) == -1) {
+        list.add(searchElement);
+        console.log("element added successfully");
+    }
+    else {
+        list.remove(searchElement);
+        console.log("element deleted successfully");
+    }
+    let elementWrite = list.show()
+    writeFile("../../program.txt", elementWrite);
+}
+class Node {
+    constructor(searchElement) {
+        this.searchElement = searchElement;
+        this.next = null;
+        this.size = 0;
     }
 }
-remove(searchElement)
-{
-    let present=this.head;
-    let previous=null;
-    while(present!=null)
+class linkedList {
+    constructor() {
+        this.head = null;
+        this.size = 0;
+    }
+    sort(arr)
     {
-        if(present.searchElement==searchElement)
-        {
-            if(present==null)
-            {
-                this.head=present.next;
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
             }
-            else{
-previous.next=present.next;
+        }
+        return arr;
+    }
+    search(searchElement) {
+        let count = 0;
+        let presentNode = this.head;
+        while (presentNode != null) {
+            if (presentNode.searchElement === searchElement) {
+                return count;
             }
-            size--;
-            return present.searchElement;
+            count++;
+            presentNode = presentNode.next;
         }
-        previous=present;
-        present=present.next;
-    }                        
-    return -1;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-}
-add(searchElement)
-{
-    let node=new Node(searchElement)
-    let present;
-    if(this.head==null)
-    {
-        this.head=node;
+        return -1
     }
-    else{
-        present=this.head;
-        while(present.next)
-        {
-            present.next=node;
+    remove(searchElement) {
+        let presentNode = this.head;
+        let previousNode = null;
+        while (presentNode != null) {
+            if (presentNode.searchElement === searchElement) {
+                if (previous == null) {
+                    this.head = presentNode.next;
+                }
+                else {
+                    previousNode.next = presentNode.next;
+                }
+                this.size++;
+                return presentNode.searchElement;
+            }
+            previousNode = presentNode;
+            presentNode = presentNode.next;
+
         }
+        return -1;
     }
-    this.size++;
+    add(searchElement) {
+        let node = new Node(searchElement);
+        let presentNode;
+        if (this.head == null) {
+            this.head = node;
+        }
+        else {
+            presentNode = this.head;
+            while (presentNode.next) {
+                presentNode = presentNode.next;
+            }
+            presentNode.next = node;
+        }
+        this.size++;
+    }
+    show() {
+        let presentNode = this.head;
+        let string = "";
+        while (presentNode) {
+            string = string + presentNode.searchElement + " ";
+            presentNode = presentNode.next;
+        }
+        console.log(presentNode,searchElement);
+        return string;
+    }
 }
-
-*/
-
+function writeFile(fileName, data) {
+    let fs = require('fs');
+    fs.writeFile(fileName, data, function (err) {
+        if (err) {
+            console.log(err);
+        }
+    });
+}
 
 /**
  * Program to create Banking Cash Counter where people come in to deposit Cash and withdraw Cash. 
